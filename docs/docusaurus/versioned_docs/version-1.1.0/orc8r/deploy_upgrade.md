@@ -14,7 +14,7 @@ cluster. You can flip your DNS records to the new application whenever you feel
 comfortable to complete the migration.
 
 This guide will assume that you've already set up all the prerequisites,
-including developer tooling, a Helm chart repository, and a Docker registry.
+including developer tooling, a Helm chart repository, and a Docker registry. Please ensure that all Terraform state files are located within your working directory before proceeding.
 
 ## Create a New Root Module
 
