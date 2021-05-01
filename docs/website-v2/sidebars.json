@@ -9,9 +9,9 @@
     ],
     "Usage": [
       {
-        "type": "subcategory",
+        "type": "category",
         "label": "How-To",
-        "ids": [
+        "items": [
           "howtos/ue_metering",
           "howtos/config_agw_bridged",
           "howtos/call_tracing",
@@ -21,22 +21,22 @@
         ]
       },
       {
-        "type": "subcategory",
+        "type": "category",
         "label": "Access Gateway",
-        "ids": [
+        "items": [
         ]
       },
       {
-        "type": "subcategory",
+        "type": "category",
         "label": "Orchestrator",
-        "ids": [
+        "items": [
           "howtos/thanos"
         ]
       },
       {
-        "type": "subcategory",
+        "type": "category",
         "label": "NMS",
-        "ids": [
+        "items": [
           "nms/overview",
           "nms/dashboard",
           "nms/equipment",
@@ -49,9 +49,9 @@
         ]
       },
       {
-        "type": "subcategory",
+        "type": "category",
         "label": "Troubleshooting",
-        "ids": [
+        "items": [
           "howtos/troubleshooting/agw_unable_to_checkin",
           "howtos/troubleshooting/user_unable_to_attach",
           "howtos/troubleshooting/update_certificates",
@@ -62,16 +62,16 @@
     ],
     "Architecture": [
       {
-        "type": "subcategory",
+        "type": "category",
         "label": "Access Gateway",
-        "ids": [
+        "items": [
           "lte/architecture_overview"
         ]
       },
       {
-        "type": "subcategory",
+        "type": "category",
         "label": "Orchestrator",
-        "ids": [
+        "items": [
           "orc8r/architecture_overview",
           "orc8r/architecture_modularity",
           "orc8r/architecture_security",
@@ -79,18 +79,18 @@
         ]
       },
       {
-        "type": "subcategory",
+        "type": "category",
         "label": "NMS",
-        "ids": [
+        "items": [
           "nms/nms_arch_overview"
         ]
       }
     ],
     "Deploy": [
       {
-        "type": "subcategory",
+        "type": "category",
         "label": "Access Gateway",
-        "ids": [
+        "items": [
           "lte/deploy_install",
           "lte/deploy_config_agw",
           "lte/deploy_config_enodebd",
@@ -100,9 +100,9 @@
         ]
       },
       {
-        "type": "subcategory",
+        "type": "category",
         "label": "Orchestrator",
-        "ids": [
+        "items": [
           "orc8r/deploy_intro",
           "orc8r/deploy_build",
           "orc8r/deploy_install",
@@ -112,16 +112,16 @@
         ]
       },
       {
-        "type": "subcategory",
+        "type": "category",
         "label": "NMS",
-        "ids": [
+        "items": [
           "nms/deploy_config"
         ]
       },
       {
-        "type": "subcategory",
+        "type": "category",
         "label": "Federation Gateway",
-        "ids": [
+        "items": [
           "feg/deploy_intro",
           "feg/deploy_build",
           "feg/deploy_install",
@@ -131,9 +131,9 @@
     ],
     "Upgrade": [
       {
-        "type": "subcategory",
+        "type": "category",
         "label": "Access Gateway",
-        "ids": [
+        "items": [
           "lte/upgrade_1_4",
           "lte/upgrade_1_3",
           "lte/upgrade_1_2",
@@ -141,9 +141,9 @@
         ]
       },
       {
-        "type": "subcategory",
+        "type": "category",
         "label": "Orchestrator",
-        "ids": [
+        "items": [
           "orc8r/upgrade_intro",
           "orc8r/upgrade_1_4",
           "orc8r/upgrade_1_3",
@@ -154,17 +154,17 @@
     ],
     "Debug": [
       {
-        "type": "subcategory",
+        "type": "category",
         "label": "Access Gateway",
-        "ids": [
+        "items": [
           "lte/debug_show_tech",
           "lte/debug_dp_probe"
         ]
       },
       {
-        "type": "subcategory",
+        "type": "category",
         "label": "Orchestrator",
-        "ids": [
+        "items": [
           "orc8r/debug_logs"
         ]
       }
@@ -178,9 +178,9 @@
     ],
     "Technical Reference": [
       {
-        "type": "subcategory",
+        "type": "category",
         "label": "Access Gateway",
-        "ids": [
+        "items": [
           "lte/dev_notes",
           "lte/dev_unit_testing",
           "lte/tr069",
@@ -190,9 +190,9 @@
         ]
       },
       {
-        "type": "subcategory",
+        "type": "category",
         "label": "Orchestrator",
-        "ids": [
+        "items": [
           "orc8r/dev_testing",
           "orc8r/dev_minikube",
           "orc8r/dev_security",
@@ -201,9 +201,9 @@
         ]
       },
       {
-        "type": "subcategory",
+        "type": "category",
         "label": "NMS",
-        "ids": [
+        "items": [
           "nms/dev_spacing",
           "nms/dev_themes",
           "nms/dev_components"
