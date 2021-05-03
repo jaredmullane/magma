@@ -1580,10 +1580,10 @@
   resolved "https://registry.yarnpkg.com/@fbcnms/types/-/types-0.1.11.tgz#11b6d53fffccd26925fbfa64d9a308db6beafdfb"
   integrity sha512-fcSBUZpanxECQcqEiMa91ZktkP9tIkINmyTp0TcUCXyFbdkwu3aOxxXTR6cBD43YKvX885J5Oc7N+MPeZjTVgw==
 
-"@fbcnms/ui@^0.1.8":
-  version "0.1.8"
-  resolved "https://registry.yarnpkg.com/@fbcnms/ui/-/ui-0.1.8.tgz#991a2308ca63565f2d6024c88fa853ae74ed1b9d"
-  integrity sha512-sj+9qfaPT7OnMecZpsTKz6jU6JV27x73xCbkZGbmdoZW7X+oFqpwvYy5nh0owE6PWvXbMtAbLUnfQnDQpMAiDg==
+"@fbcnms/ui@^0.1.9":
+  version "0.1.9"
+  resolved "https://registry.yarnpkg.com/@fbcnms/ui/-/ui-0.1.9.tgz#4290e995ee0a125b36a110037f39b23e6fc9748e"
+  integrity sha512-L5JWofXQTBzKyJwJU/9m9UIDc6U5Gdn2pNUPaiPPKR+CRfGOYRb5I8Yr37N9BGHbq6iWlfnXMmMsRS0bo7Pszg==
   dependencies:
     "@material-ui/core" "^4.0.0"
     "@material-ui/icons" "^4.0.0"
@@ -1593,7 +1593,7 @@
     beaver-logger "^4.0.12"
     immutable "^4.0.0-rc.12"
     mapbox-gl "^0.53.0"
-    notistack "^0.8.5"
+    notistack "^1.0.3"
     react "^16.8.6"
     react-autosuggest "^9.4.3"
     react-chartjs-2 "^2.7.4"
@@ -4365,7 +4365,7 @@ cls-bluebird@^2.1.0:
     is-bluebird "^1.0.2"
     shimmer "^1.1.0"
 
-clsx@^1.0.1, clsx@^1.0.2, clsx@^1.0.4:
+clsx@^1.0.1, clsx@^1.0.2, clsx@^1.0.4, clsx@^1.1.0:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/clsx/-/clsx-1.1.1.tgz#98b3134f9abbdf23b2663491ace13c5c03a73188"
   integrity sha512-6/bPho624p3S2pMyvP5kKBPXnI3ufHLObBFCfgx+LkeR5lg2XYy2hqZqUf45ypD8COn2bhgGJSUE+l5dhNBieA==
@@ -10064,6 +10064,14 @@ notistack@^0.8.5:
     hoist-non-react-statics "^3.3.0"
     prop-types "^15.7.2"
     react-is "^16.8.6"
+
+notistack@^1.0.3:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/notistack/-/notistack-1.0.6.tgz#3d726ea98d9e2b314ea1a34d0b1a5f58d39494ef"
+  integrity sha512-/p7W9b3r3/LDXUpUjNgZqnYj+NYG3/4htZcyucOFftrDKEpveEMPFdPlvmoT9+N1L4GgcKEY9Vr9+Dxyk2FQcQ==
+  dependencies:
+    clsx "^1.1.0"
+    hoist-non-react-statics "^3.3.0"
 
 npm-bundled@^1.0.1:
   version "1.1.1"
