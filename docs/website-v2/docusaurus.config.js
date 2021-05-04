@@ -1,4 +1,5 @@
-module.exports={
+/** @type {import('@docusaurus/types').DocusaurusConfig} */
+(module.exports = {
   "title": "Magma Documentation",
   "tagline": "Bring more people online by enabling operators with open, flexible, and extensible network solutions",
   "url": "https://magmacore.org",
@@ -21,10 +22,11 @@ module.exports={
         "docs": {
           "showLastUpdateAuthor": true,
           "showLastUpdateTime": true,
-          editUrl: ({locale, versionDocsDirPath, docPath}) => makeEditUrl(locale, versionDocsDirPath, docPath),
-          "path": "./docs",
-	  "routeBasePath": "website-v2",
+          "editUrl": "https://github.com/magma/magma/tree/master/docs",
+          "path": "./docs", // FS content path (./docs)
+          "routeBasePath": "docs", // Url subpath (http://localhost:3000/docs)
           "sidebarPath": require.resolve("./sidebars.json"),
+          "onlyIncludeVersions": ['current'],
         },
         "blog": {},
         "theme": {
@@ -118,4 +120,4 @@ module.exports={
       "indexName": "magma"
     }
   }
-}
+});

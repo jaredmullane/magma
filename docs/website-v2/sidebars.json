@@ -16,7 +16,7 @@
           "howtos/config_agw_bridged",
           "howtos/call_tracing",
           "howtos/events_monitoring",
-          "howtos/header_enrichment.md",
+          "howtos/he_api",
           "howtos/inbound_roaming"
         ]
       },
@@ -214,7 +214,7 @@
       "proposals/p001_vpn_config_from_api",
       "proposals/p002_scaled_prometheus_pipeline",
       "proposals/p003_qos_enforcement",
-      "proposals/p004_fua-restrict-feature",
+      "proposals/p004_fua_restrict_feature",
       "proposals/p005_call_tracing",
       "proposals/p007_header_enrichment",
       "proposals/p008_apn_correction",

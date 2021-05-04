@@ -266,7 +266,7 @@
         },
         {
           "type": "doc",
-          "id": "version-1.4.0/howtos/header_enrichment.md"
+          "id": "version-1.4.0/howtos/he_api"
         }
       ]
     },
@@ -358,7 +358,7 @@
         },
         {
           "type": "doc",
-          "id": "version-1.4.0/proposals/p004_fua-restrict-feature"
+          "id": "version-1.4.0/proposals/p004_fua_restrict_feature"
         },
         {
           "type": "doc",
