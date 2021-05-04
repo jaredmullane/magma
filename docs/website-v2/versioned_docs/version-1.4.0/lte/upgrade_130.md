@@ -11,7 +11,7 @@ into them and run an `apt-get install`.
 
 The Access Gateway version needs to be equal to or less than the version
  of your Orc8r. We recommend you update your Orc8r first.
- 
+
 ## NMS Autoupgrade
 
 If you've set up your Access Gateways in upgrade tiers already, you can upgrade
@@ -24,9 +24,9 @@ tier to `1.3.0-1602477016-723feee0`.
 The AGWs in this tier will pull this configuration and upgrade automatically.
 By default, we check for an upgrade every 5 minutes.
 
-![1.2.0 upgrade](assets/agw_120_1.png)
+![1.2.0 upgrade](/assets/agw_120_1.png)
 
-![1.2.0 upgrade](assets/agw_130_2.png)
+![1.2.0 upgrade](/assets/agw_130_2.png)
 
 When the gateway completes its upgrade, you should see that its reported
 software version in. If it hasn't changed, something probably went wrong with

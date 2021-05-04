@@ -38,7 +38,7 @@ will be impacted by these changes.
 button and filling out the requested fields. After saving these changes, the
 page should refresh with the new list of APNs and their configurations.
 
-![Creating an APN Configuration](assets/nms/add_apnconfig.png)
+![Creating an APN Configuration](/assets/nms/add_apnconfig.png)
 
 ## Add APN Configurations to Subscriber Profiles
 
@@ -52,7 +52,7 @@ field (screenshot below shows the view after clicking on the "Add Subscriber"
 button). Once you save the updated or new subscriber information, the APNs
 added to the subscriber profile will show be reflected on the page.
 
-![Adding subscriber with APN](assets/nms/add_apn2subscriber.png)
+![Adding subscriber with APN](/assets/nms/add_apn2subscriber.png)
 
 ### Notes
 
@@ -112,7 +112,7 @@ non_3gpp {
 ```
 
 ## APN Override Config in MME
-To override the UE requested APN with a network specified APN, you can use the 
+To override the UE requested APN with a network specified APN, you can use the
 `enable_apn_correction` and `apn_correction_map_list` in `/etc/magma/mme.yml`.
 ```
 enable_apn_correction: false
@@ -120,7 +120,7 @@ apn_correction_map_list:
         - imsi_prefix: "00101"
           apn_override: "magma.ipv4"
 ```
-If `enable_apn_correction` is set to `true`, MME will override the original APN 
+If `enable_apn_correction` is set to `true`, MME will override the original APN
 based on the specified IMSI-prefix filtering.
-We support up to 10 IMSI prefix filters and corresponding APNs. 
+We support up to 10 IMSI prefix filters and corresponding APNs.
 See under Proposals for a more detailed design doc.

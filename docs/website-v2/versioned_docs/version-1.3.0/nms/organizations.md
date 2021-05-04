@@ -30,14 +30,14 @@ has access to the master organization. Run the command
     export NMS_POD=$(kubectl get pod -l app.kubernetes.io/component=magmalte -o jsonpath='{.items[0].metadata.name}')
     kubectl exec -it ${NMS_POD} -- yarn setAdminPassword master ADMIN_USER_EMAIL ADMIN_USER_PASSWORD
     ```
-          
+
 You can then log in to the master organization at `master.nms.yourdomain.com`
 to create additional organizations and users.
 
 When creating a new organization, only enable the `NMS` tab. Also, note that
 only users with the `Super User` role can create new networks within each
 organization.
-          
+
 ## DNS Resolution
 
 We use [ExternalDNS](https://github.com/kubernetes-sigs/external-dns) to
@@ -56,18 +56,18 @@ Create one organization and give it access to all networks. This is essentially
 the same as v1.0 when there was no tenancy support. The only difference is that
 the NMS is accessible from the URL `magma-test.nms.yourdomain.com`
 
-![Org with access to all networks](assets/nms/org_all_networks.png)
+![Org with access to all networks](/assets/nms/org_all_networks.png)
 
 ### Multiple Tenants
 
 Create a second organization and give it access to specific networks
 
-![List of organizations](assets/nms/org_multiple_list.png)
+![List of organizations](/assets/nms/org_multiple_list.png)
 
 Here, `fb-test` has access to all networks, while `magma-test` only has access
 to the network `mpk_test`. Create a user in this organization to use it
 
-![Add user to org](assets/nms/org_add_user.png)
+![Add user to org](/assets/nms/org_add_user.png)
 
 When you log in to `magma-test.nms.yourdomain.com` you will only be able to see the
 network `mpk_test`. If you log into `fb-test.nms.yourdomain.com`, you will

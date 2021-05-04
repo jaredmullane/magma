@@ -21,7 +21,7 @@ configuration and metrics for network devices
 - **A southbound interface** which applies device configuration and reports
 device status
 
-![Orc8r Overview](assets/orc8r/orc8r_overview.png)
+![Orc8r Overview](/assets/orc8r/orc8r_overview.png)
 
 At a lower level, Orchestrator supports the following functionality
 
@@ -47,7 +47,7 @@ specific use-case.
 Prior to v1.4, the Orchestrator application was deployed in a single
 “supercontainer” on Kubernetes.
 
-![Orc8r Plugin Architecture](assets/orc8r/orc8r_plugin.png)
+![Orc8r Plugin Architecture](/assets/orc8r/orc8r_plugin.png)
 
 Modularity was achieved via the following plugin interface
 
@@ -73,7 +73,7 @@ each service at runtime.
 Starting in v1.4, Orchestrator is deployed as a service mesh. Every
 Orchestrator service is now deployed with its own Kubernetes service and pod.
 
-![Orc8r Service Mesh Architecture](assets/orc8r/orc8r_service_mesh.png)
+![Orc8r Service Mesh Architecture](/assets/orc8r/orc8r_service_mesh.png)
 
 The service mesh changes provide the following benefits
 
@@ -92,13 +92,13 @@ then query the Kubernetes API to discover service functionality.
 The following diagram displays an example call flow for LTE gateway
 configuration
 
-![Orc8r Configuration](assets/orc8r/orc8r_configuration.png)
+![Orc8r Configuration](/assets/orc8r/orc8r_configuration.png)
 
 ### Metrics
 
 The following diagram displays the call flow for the metrics pipeline
 
-![Orc8r Metrics](assets/orc8r/orc8r_metrics.png)
+![Orc8r Metrics](/assets/orc8r/orc8r_metrics.png)
 
 ### Services
 

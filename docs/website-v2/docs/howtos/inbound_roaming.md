@@ -28,7 +28,7 @@ The example below shows a possible architecture for a Non-Federated +
 roaming case. As you can see in the picture below, VPN is suggested to
 reach to the user plane at the remote PGW.
 
-![Magma events table](assets/feg/inbound_roaming_architecture_non_federated.png?raw=true "Non-Federated Inbound Roaming")
+![Magma events table](/assets/feg/inbound_roaming_architecture_non_federated.png)
 
 Other configurations like SubscriberDB with PCRF/OCS to handle local
 subscribers may also work but are not tested yet.

@@ -26,7 +26,7 @@ The current magma metrics deployment involves only a single Prometheus server, w
 
 On prod we currently have ~347 active gateways, and ~105k metric series
 
-Query times for PromQL query `count({__name__=~".+"})` 
+Query times for PromQL query `count({__name__=~".+"})`
 
 |Time Range	|Query Time	|
 |---	|---	|
@@ -46,14 +46,14 @@ Even the smallest query range takes over 3 seconds, and over any significant per
 
 The main problem with long query times is less responsive dashboards.
 
-Time to load grafana dashboard on prod NMS: **>15s **from click until all graphs are populated. Most of this time is spent looking at all series in order to determine the set of available `networkID`s and `gatewayID`s. 
+Time to load grafana dashboard on prod NMS: **>15s **from click until all graphs are populated. Most of this time is spent looking at all series in order to determine the set of available `networkID`s and `gatewayID`s.
 
 # Proposed Solution
 
 ### Thanos
 
 [Thanos](https://improbable.io/blog/thanos-prometheus-at-scale) is a very popular project which allows for easy and customizable scaling of prometheus monitoring pipelines. From the start, I believe this will be the easiest and most powerful solution to the problem. Thanos consists of several components, all of which can be used independently. The most relevant to us is the `Querier` which allows for the querying of data across multiple prometheus servers. A simple architecture diagram from Thanos shows how this works in a typical deployment:
-![image.png](assets/proposals/p002_scaled_prometheus_pipeline/image.png)Here we see multiple prometheus servers with the Thanos `sidecar` attached. This allows for the rest of the thanos components to work together. Then, the `Querier` components are able to accept PromQL queries and retrieve data from any set of the prometheus servers.
+![image.png](/assets/proposals/p002_scaled_prometheus_pipeline/image.png)Here we see multiple prometheus servers with the Thanos `sidecar` attached. This allows for the rest of the thanos components to work together. Then, the `Querier` components are able to accept PromQL queries and retrieve data from any set of the prometheus servers.
 
 With this setup, we only need to deploy the Thanos `sidecar` and multiple `Querier` components, along with Object storage to achieve faster queries.
 
@@ -70,15 +70,15 @@ In this solution, the flow of metrics is not changed until it gets to the promet
 
 Current metrics pipeline diagram:
 
-![currentMetricsPipeline.png](assets/proposals/p002_scaled_prometheus_pipeline/currentMetricsPipeline.png)
+![currentMetricsPipeline.png](/assets/proposals/p002_scaled_prometheus_pipeline/currentMetricsPipeline.png)
 
 Proposed pipeline:
 
-![newMetricsPipeline.png](assets/proposals/p002_scaled_prometheus_pipeline/proposedMetricsPipeline.png)
+![newMetricsPipeline.png](/assets/proposals/p002_scaled_prometheus_pipeline/proposedMetricsPipeline.png)
 
 ### Improving query times with Object Storage
 
-All metrics go through the controller (which is already scalable and placed behind a load balancer), where they are pushed to the `prometheus-edge-hub` (or pushgateway). The single prometheus server then scrapes from this pushgateway. 
+All metrics go through the controller (which is already scalable and placed behind a load balancer), where they are pushed to the `prometheus-edge-hub` (or pushgateway). The single prometheus server then scrapes from this pushgateway.
 
 All metrics are stored for 30 days in the Prometheus TSDB storage. This means that all queries have to go through the prometheus server itself, which is the main cause of slow queries.
 

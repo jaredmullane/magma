@@ -26,7 +26,7 @@
           "path": "./docs", // FS content path (./docs)
           "routeBasePath": "docs", // Url subpath (http://localhost:3000/docs)
           "sidebarPath": require.resolve("./sidebars.json"),
-          "onlyIncludeVersions": ['current'],
+          // "onlyIncludeVersions": ['current','1.4.0','1.3.0'],
         },
         "blog": {},
         "theme": {
@@ -49,9 +49,24 @@
           "position": "left"
         },
         {
-          "href": "/",
+          "to": "/docs/basics/introduction",
           "label": "Docs",
           "position": "left"
+        },
+        {
+          type: 'docsVersionDropdown',
+          position: "left",
+          dropdownActiveClassDisabled: true,
+          dropdownItemsAfter: [
+            {
+              to: 'https://v1.docusaurus.io',
+              label: '1.x.x',
+            },
+            {
+              to: '/versions',
+              label: 'All versions',
+            },
+          ],
         },
         {
           "href": "https://github.com/magma",
@@ -62,48 +77,6 @@
           "href": "https://magmacore.org/community",
           "label": "Community",
           "position": "left"
-        },
-        {
-          "to": "docs/",
-          "label": "Docs",
-          "position": "left"
-        },
-        {
-          "label": "Version",
-          "to": "docs",
-          "position": "right",
-          "items": [
-            {
-              "label": "1.4.0",
-              "to": "docs/",
-              "activeBaseRegex": "docs/(?!1.0.0|1.0.1|1.1.0|1.2.0|1.3.0|1.4.0|next)"
-            },
-            {
-              "label": "1.3.0",
-              "to": "docs/1.3.0/"
-            },
-            {
-              "label": "1.2.0",
-              "to": "docs/1.2.0/"
-            },
-            {
-              "label": "1.1.0",
-              "to": "docs/1.1.0/"
-            },
-            {
-              "label": "1.0.1",
-              "to": "docs/1.0.1/"
-            },
-            {
-              "label": "1.0.0",
-              "to": "docs/1.0.0/"
-            },
-            {
-              "label": "Master/Unreleased",
-              "to": "docs/next/",
-              "activeBaseRegex": "docs/next/(?!support|team|resources)"
-            }
-          ]
         }
       ]
     },
