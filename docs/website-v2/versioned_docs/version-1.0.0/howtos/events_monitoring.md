@@ -27,7 +27,7 @@ NMS UI, or through our REST API.
 
 #### NMS
 
-![Magma events table](assets/lte/events_table.png?raw=true "Magma Events Table")
+![Magma events table](/assets/lte/events_table.png)
 
 The easiest way to view Magma's events is through the NMS UI.
 Events can be seen on the main network dashboard.
@@ -89,7 +89,7 @@ Properties
 *established_sync_rpc_stream*: SyncRPC connection was established
 
 *disconnected_sync_rpc_stream*: SyncRPC stream was disconnected
-    
+
 #### Federation Gateway Events
 
 `health_events.v1.yml`
@@ -109,7 +109,7 @@ Properties
 Properties
 - failure reason
 ```
-        
+
 #### AAA Events
 
 `aaa_server_events.v1.yml`

@@ -1,4 +1,5 @@
-module.exports={
+/** @type {import('@docusaurus/types').DocusaurusConfig} */
+(module.exports = {
   "title": "Magma Documentation",
   "tagline": "Bring more people online by enabling operators with open, flexible, and extensible network solutions",
   "url": "https://magmacore.org",
@@ -21,10 +22,11 @@ module.exports={
         "docs": {
           "showLastUpdateAuthor": true,
           "showLastUpdateTime": true,
-          editUrl: ({locale, versionDocsDirPath, docPath}) => makeEditUrl(locale, versionDocsDirPath, docPath),
-          "path": "./docs",
-	  "routeBasePath": "website-v2",
+          "editUrl": "https://github.com/magma/magma/tree/master/docs",
+          "path": "./docs", // FS content path (./docs)
+          "routeBasePath": "docs", // Url subpath (http://localhost:3000/docs)
           "sidebarPath": require.resolve("./sidebars.json"),
+          // "onlyIncludeVersions": ['current','1.4.0','1.3.0'],
         },
         "blog": {},
         "theme": {
@@ -47,9 +49,13 @@ module.exports={
           "position": "left"
         },
         {
-          "href": "/",
+          "to": "/docs/basics/introduction",
           "label": "Docs",
           "position": "left"
+        },
+        {
+          type: 'docsVersionDropdown',
+          position: "left",
         },
         {
           "href": "https://github.com/magma",
@@ -60,48 +66,6 @@ module.exports={
           "href": "https://magmacore.org/community",
           "label": "Community",
           "position": "left"
-        },
-        {
-          "to": "docs/",
-          "label": "Docs",
-          "position": "left"
-        },
-        {
-          "label": "Version",
-          "to": "docs",
-          "position": "right",
-          "items": [
-            {
-              "label": "1.4.0",
-              "to": "docs/",
-              "activeBaseRegex": "docs/(?!1.0.0|1.0.1|1.1.0|1.2.0|1.3.0|1.4.0|next)"
-            },
-            {
-              "label": "1.3.0",
-              "to": "docs/1.3.0/"
-            },
-            {
-              "label": "1.2.0",
-              "to": "docs/1.2.0/"
-            },
-            {
-              "label": "1.1.0",
-              "to": "docs/1.1.0/"
-            },
-            {
-              "label": "1.0.1",
-              "to": "docs/1.0.1/"
-            },
-            {
-              "label": "1.0.0",
-              "to": "docs/1.0.0/"
-            },
-            {
-              "label": "Master/Unreleased",
-              "to": "docs/next/",
-              "activeBaseRegex": "docs/next/(?!support|team|resources)"
-            }
-          ]
         }
       ]
     },
@@ -118,4 +82,4 @@ module.exports={
       "indexName": "magma"
     }
   }
-}
+});

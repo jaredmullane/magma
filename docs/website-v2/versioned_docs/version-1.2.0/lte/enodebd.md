@@ -69,7 +69,7 @@ Configure the RAN parameters in the resulting multi-step modal as necessary.
 Note that fields left blank will be inherited from either the network or
 gateway LTE parameters:
 
-![Configuring an eNodeB](assets/nms/configure_enb_12.png)
+![Configuring an eNodeB](/assets/nms/configure_enb_12.png)
 
 Then, go back to the "Gateways" page and click on the ID of the AGW that you
 registered in the gateway table. Click through to the "Config" tab of the
@@ -77,7 +77,7 @@ AGW detail view, then hit "Edit" by the RAN configuration. Select the eNodeB
 that you just registered in the multi-select dropdown, then save the update.
 Make sure that transmit is enabled.
 
-![Connecting an eNodeB](assets/nms/connect_enb.png)
+![Connecting an eNodeB](/assets/nms/connect_enb.png)
 
 ### Basic Troubleshooting
 After connecting your eNodeB(s) to the gateway through the `eth1` interface, you
@@ -172,13 +172,13 @@ The configuration of unmanaged (eNBs lacking TR-069 functionality) is done throu
 
 ### Disable dnsd Service
 
-1. SSH into your AGW 
+1. SSH into your AGW
 2. Type ```cat -n dnsd.conf```
-3. Comment out the line for dhcp-range 
+3. Comment out the line for dhcp-range
 
-Alternatively, this can also be completed using the orchestrator through dhcp_server_enabled on the network cloud in the DNS configuration. 
+Alternatively, this can also be completed using the orchestrator through dhcp_server_enabled on the network cloud in the DNS configuration.
 
-### S1 Interface 
+### S1 Interface
 
 Connect your eNodeB to the ```eth1``` interface of Magma gateway. Magma uses ```eth1``` as the default S1 interface. If you have more than one eNodeB, use an L2 switch to connect all S1 interfaces. For debugging purposes, you may find it particularly useful to do the following:
 
@@ -187,4 +187,4 @@ Connect your eNodeB to the ```eth1``` interface of Magma gateway. Magma uses ```
 3. Connect the WAN interface on your enodeB to port Y on the switch.
 4. Connect your host to port Z on the switch.
 
-This will allow you to do live packet captures with Wireshark from your host to debug the S1 interface between the enodeB and the AGW (filter for SCTP). In this case, ensure that your eNB is using IPs from the MME pool and verify that that eNB is point to the MME IP on the AGW. 
+This will allow you to do live packet captures with Wireshark from your host to debug the S1 interface between the enodeB and the AGW (filter for SCTP). In this case, ensure that your eNB is using IPs from the MME pool and verify that that eNB is point to the MME IP on the AGW.

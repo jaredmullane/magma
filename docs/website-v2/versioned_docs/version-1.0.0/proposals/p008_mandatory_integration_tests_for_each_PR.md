@@ -9,23 +9,23 @@ hide_title: true
 ## Problem descriptions
 At the moment, buggy codes gets merged into master branch time after time, which affects development of new features, slowing developers down. This happens because some PRs get merged without performing proper QA by the code maintainers who are not willing to wait until integration tests have executed. Here are some numbers which can explain what does "wait too long" means:
  - magma_integration_tests pipeline takes ~1 hour to execute and Jenkins can process only 1 run/hour (does not support concurrent builds)
- - existing test env is a VirtualBox VMs managed by Vagrant on top of KVM VMs which are running on baremetall node is very slow. 
+ - existing test env is a VirtualBox VMs managed by Vagrant on top of KVM VMs which are running on baremetall node is very slow.
  - average magma_integration_tests queue length was 30-40 jobs (before opt-in strategy was implemented)
- - CWAG-integration-test and LTE-integration-test jobs take 1 hour each (before optimisation.) Jenkins can process approximtely 13 executions per hour. 
+ - CWAG-integration-test and LTE-integration-test jobs take 1 hour each (before optimisation.) Jenkins can process approximtely 13 executions per hour.
  Recently we switched to "Opt-In strategy" for PRs affecting the gateway code base. These PRs must be marked with one of the following labels: "component: agw" OR "component: cwf" OR "component: feg". Implementation of this strategy decreased load on jenkins (went from 30+ to 2-10 per day). At the same time, this means that PRs which were not marked with the correct label are not tested and may be introducing new bugs.
- 
+
  We can draw a conclusion from above and outline the following pain points:
  - Some PRs are still merged into master without integration tests
  - Integration tests are slow (actual execution is slow, regardless of VM setup time) so we can't realistically run them for each commit of each PR.
  - Reviewers are not applying tags to PRs and waiting for them to complete (or skipping gatekeeping tests)
  - Magma_integration_tests pipeline is the largest bottleneck in our CI process
- 
+
 
 ## Proposed solutions
 
 ### Integration tests are slow(which is more or less expected) so we can't run them for each commit of each PR.
 We should execute integration tests for each and every PR which is going to be merged in to master. But there's no sense to do it for each and every commit.
-Solution 
+Solution
 Stage 1:
  - Ensure that for each commit of each PR all unit test jobs are executed by CircleCI
  - Ensure that each PR was reviewed and accepted by component maintainer
@@ -47,10 +47,10 @@ We run twice daily(EU time / US night time) master branch regression test builds
 - Reviewer did not wait for tests
 - Two conflicting PRs were merged that had logic that breaks something
 - External factors not covered by PR process (such as a library package update)
-This regression pipeline runs twice a day(EU time / US night time) on a schedule. If the build fails, a GitHub issue is created tagging Magma CI team for urgent attention. 
+This regression pipeline runs twice a day(EU time / US night time) on a schedule. If the build fails, a GitHub issue is created tagging Magma CI team for urgent attention.
 
 ### Magma_integration_tests pipeline is the largest bottleneck in our CI process
-At the moment magma_integration_tests pipeline is structured in such a way that it's using a Jenkins slave as a jump host to a real test environment. We only have one real test env for the magma_integration_tests for now. We need to do some simple refactoring to ensure that magma_integration_tests utilizes a Jenkins slave as a real test env (like CWAG and LTE integration tests do). This means replacing all the 'ssh <user>@<host> - '<command>'' with corresponding 'sh <command> ' statements in the pipeline definition. This simple refactoring should allow Jenkins to handle up to 16 builds per hour (instead of just 1 at the present moment).
+At the moment magma_integration_tests pipeline is structured in such a way that it's using a Jenkins slave as a jump host to a real test environment. We only have one real test env for the magma_integration_tests for now. We need to do some simple refactoring to ensure that magma_integration_tests utilizes a Jenkins slave as a real test env (like CWAG and LTE integration tests do). This means replacing all the 'ssh &lt;user&gt;@&lt;host&gt; - '&lt;command&gt;'' with corresponding 'sh &lt;command&gt; ' statements in the pipeline definition. This simple refactoring should allow Jenkins to handle up to 16 builds per hour (instead of just 1 at the present moment).
 
 ### Existing test env is a VirtualBox VMs managed by Vagrant on top of KVM VMs which are running on baremetall node is very slow.
 As we found as a result of performance tests current setup gives us low performace because of Virtualbox running in KVM. Best option we can suggest so far is start using libvirt based vagrant boxes which 2-3 times faster then Virtualbox.
