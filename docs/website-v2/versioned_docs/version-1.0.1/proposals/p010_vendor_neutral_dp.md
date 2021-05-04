@@ -54,7 +54,7 @@ deployment:
 
 The DP will sit between the SAS and the CBSD or downstream DP.
 
-# <img src="media/image1.png" style="width:5.21875in;height:2.09375in" />
+# <img src="media/image1.png" style={{width:"5.21875in", height:"2.09375in"}} />
 
 Neutral DP System Architecture
 
@@ -63,11 +63,11 @@ deployment of the vendor neutral DP can be in any generic kubernetes
 environment such as an on premise compute node (or set of nodes) or in a
 cloud environment such as AWS.
 
-<img src="media/image2.png" style="width:5.54167in;height:2.72917in" />
+<img src="media/image2.png" style={{width:"5.54167in", height: "2.72917in"}} />
 
 Microservices in the DP
 
-# Specification 
+# Specification
 
 The following sections provide functional requirements included in the
 scope of work.
@@ -76,17 +76,17 @@ scope of work.
 
 <table>
 <tbody>
-<tr class="odd">
+<tr className="odd">
 <td><strong>Requirement ID</strong></td>
 <td><strong>Description</strong></td>
 <td><strong>Priority</strong></td>
 </tr>
-<tr class="even">
+<tr className="even">
 <td>SCI-01</td>
 <td>The SAS client interface shall expose a single SSL connection between the DP and the SAS used for all proxied connections.</td>
 <td>P1</td>
 </tr>
-<tr class="odd">
+<tr className="odd">
 <td>SCI-02</td>
 <td><p>The SAS client interface shall be compliant with [1] when sending the following messages on behalf of proxied CBSDs:</p>
 <ol type="1">
@@ -100,17 +100,17 @@ scope of work.
 </ol></td>
 <td>P1</td>
 </tr>
-<tr class="even">
+<tr className="even">
 <td>SCI-03</td>
 <td>The SAS client interface shall validate the SAS connection using a certificate that chains back to a Domain Proxy CA according to [3].</td>
 <td>P1</td>
 </tr>
-<tr class="odd">
+<tr className="odd">
 <td>SCI-04</td>
 <td>The SAS client interface shall comply with all interface test cases defined in [2].</td>
 <td>P1</td>
 </tr>
-<tr class="even">
+<tr className="even">
 <td>SCI-05</td>
 <td>The SAS client interface shall be implemented with a TCP_NODELAY socket so that no extra queuing delay is added between the application and the wire.</td>
 <td>P1</td>
@@ -118,18 +118,18 @@ scope of work.
 </tbody>
 </table>
 
-## 
+##
 
 ## CBSD Proxy Interface Requirements (interface toward CBSD)
 
 <table>
 <tbody>
-<tr class="odd">
+<tr className="odd">
 <td><strong>Requirement ID</strong></td>
 <td><strong>Description</strong></td>
 <td><strong>Priority</strong></td>
 </tr>
-<tr class="even">
+<tr className="even">
 <td>CPI-01</td>
 <td><p>The CBSD proxy interface shall accept incoming connections from the SAS client interfaces in CBSDs as defined in [1], receiving and processing request message types including:</p>
 <ol type="1">
@@ -143,17 +143,17 @@ scope of work.
 </ol></td>
 <td>P1</td>
 </tr>
-<tr class="odd">
+<tr className="odd">
 <td>CPI-02</td>
 <td>The CBSD proxy interface shall comply with security validation requirements for incoming proxy connections according to [3] with certificates that chain to a SAS CA.</td>
 <td>P1</td>
 </tr>
-<tr class="even">
+<tr className="even">
 <td>CPI-03</td>
 <td>The CBSD proxy interface shall be implemented as a pluggable module to internal APIs such that other external interface protocol modules (TR-069, SNMP, NETCONF) can be supported in parallel to the SAS client interface defined in [1] on a per connection basis.</td>
 <td>P1</td>
 </tr>
-<tr class="odd">
+<tr className="odd">
 <td>CPI-04</td>
 <td>The CBSD proxy interface shall be implemented with a TCP_NODELAY socket so that no extra queuing delay is added between the application and the wire.</td>
 <td>P1</td>
@@ -165,47 +165,47 @@ scope of work.
 
 <table>
 <tbody>
-<tr class="odd">
+<tr className="odd">
 <td><strong>Requirement ID</strong></td>
 <td><strong>Description</strong></td>
 <td></td>
 </tr>
-<tr class="even">
+<tr className="even">
 <td>APM-01</td>
 <td>The aggregation and proxy management process shall support two modes of operation including Active and Passive.</td>
 <td>P1</td>
 </tr>
-<tr class="odd">
+<tr className="odd">
 <td>APM-02</td>
 <td>The aggregation and proxy management process shall allow the selection of Active or Passive operation as a global setting for all connections on the CBSD Proxy Interface.</td>
 <td>P1</td>
 </tr>
-<tr class="even">
+<tr className="even">
 <td>APM-03</td>
 <td>The aggregation and proxy management process shall allow the selection of Active or Passive operation on a per CBSD/DP basis on the CBSD Proxy Interface. This selection shall override the global configuration for the specified CBSD.</td>
 <td>P2</td>
 </tr>
-<tr class="odd">
+<tr className="odd">
 <td>APM-04</td>
 <td>The aggregation and proxy management process in Passive mode shall perform a proxy and forward function for all messages received on the CBSD Proxy Interface without modification to message body contents.</td>
 <td>P1</td>
 </tr>
-<tr class="even">
+<tr className="even">
 <td>APM-05</td>
 <td>The aggregation and proxy management process in Active mode shall instantiate and maintain two state machines according to [1] on the SAS Client interface and separately on the CBSD Proxy Interface for each CBSD connection.</td>
 <td>P2</td>
 </tr>
-<tr class="odd">
+<tr className="odd">
 <td>APM-06</td>
 <td>The aggregation and proxy management process in Active mode shall have an extensible logic module that can create and/or modify message body contents independently for SAS Client Interface and CBSD Proxy Interface for a given CBSD.</td>
 <td>P2</td>
 </tr>
-<tr class="even">
+<tr className="even">
 <td>APM-07</td>
 <td>The aggregation and proxy management process in Active mode shall allow logic modules to be specific to a CBSD class (e.g. FCC ID specific, list of FCC IDs).</td>
 <td>P2</td>
 </tr>
-<tr class="odd">
+<tr className="odd">
 <td>APM-08</td>
 <td><p>The aggregation and proxy management process shall log state information for CBSDs and grants of Passive and Active mode connections in the CBSD &amp; Grant Database with metadata including at least:</p>
 <ul>
@@ -219,7 +219,7 @@ scope of work.
 </ul></td>
 <td>P1</td>
 </tr>
-<tr class="even">
+<tr className="even">
 <td>APM-09</td>
 <td>The aggregation and proxy management process shall store state information for CBSDs and grants of Active mode connections in the CBSD &amp; Grant Database.</td>
 <td>P2</td>
@@ -231,12 +231,12 @@ scope of work.
 
 <table>
 <tbody>
-<tr class="odd">
+<tr className="odd">
 <td><strong>Requirement ID</strong></td>
 <td><strong>Description</strong></td>
 <td><strong>Priority</strong></td>
 </tr>
-<tr class="even">
+<tr className="even">
 <td>UI-01</td>
 <td><p>The DP UI shall provide the ability to configure a SAS operator with SAS specific details:</p>
 <ul>
@@ -246,32 +246,32 @@ scope of work.
 </ul></td>
 <td>P1</td>
 </tr>
-<tr class="odd">
+<tr className="odd">
 <td>UI-02</td>
 <td>The DP UI shall provide the ability to configure a global default SAS operator from the configured SAS operator list.</td>
 <td>P1</td>
 </tr>
-<tr class="even">
+<tr className="even">
 <td>UI-03</td>
 <td>The DP UI shall provide the ability to configure an override SAS operator for a selected set of CBSDs.</td>
 <td>P1</td>
 </tr>
-<tr class="odd">
+<tr className="odd">
 <td>UI-04</td>
 <td>The DP UI shall provide the ability to set the global default mode of operation to either Passive or Active</td>
 <td>P1</td>
 </tr>
-<tr class="even">
+<tr className="even">
 <td>UI-05</td>
 <td>The DP UI shall provide the ability to configure override Passive or Active mode on a per CBSD.</td>
 <td>P1</td>
 </tr>
-<tr class="odd">
+<tr className="odd">
 <td>UI-06</td>
 <td>The DP UI shall display a table of current connections and their state.</td>
 <td>P1</td>
 </tr>
-<tr class="even">
+<tr className="even">
 <td>UI-07</td>
 <td><p>The DP UI shall provide the ability to filter historical logs based on:</p>
 <ul>
@@ -286,7 +286,7 @@ scope of work.
 </ul></td>
 <td>P1</td>
 </tr>
-<tr class="odd">
+<tr className="odd">
 <td>UI-08</td>
 <td><p>The DP UI shall allow configuration of users with rights including at least:</p>
 <ul>
@@ -295,17 +295,17 @@ scope of work.
 </ul></td>
 <td>P1</td>
 </tr>
-<tr class="even">
+<tr className="even">
 <td>UI-09</td>
 <td>The DP UI shall authenticate user credentials upon login of a user and enforce user permissions for the user session duration.</td>
 <td>P1</td>
 </tr>
-<tr class="odd">
+<tr className="odd">
 <td>UI-10</td>
 <td>The DP UI shall allow the export/download of log files in csv format that include all fields in requirement UI-07.</td>
 <td>P1</td>
 </tr>
-<tr class="even">
+<tr className="even">
 <td>UI-11</td>
 <td><p>The DP UI shall allow the user to select a connection/CBSD ID to view real-time updates on messaging including:</p>
 <ul>
@@ -319,7 +319,7 @@ scope of work.
 </ul></td>
 <td>P1</td>
 </tr>
-<tr class="odd">
+<tr className="odd">
 <td>UI-12</td>
 <td><p>The DP UI shall provide a summary dashboard with graphical displays of:</p>
 <ul>
@@ -334,12 +334,12 @@ scope of work.
 </ul></td>
 <td>P1</td>
 </tr>
-<tr class="even">
+<tr className="even">
 <td>UI-13</td>
 <td>The DP UI shall provide the ability to define a CBSD record based on FCC ID and Serial Number</td>
 <td>P2</td>
 </tr>
-<tr class="odd">
+<tr className="odd">
 <td>UI-14</td>
 <td><p>The DP UI shall provide configuration interface to allow creation, modification, or deletion of CBSD records including the following installation parameters:</p>
 <ul>
@@ -360,7 +360,7 @@ scope of work.
 </ul></td>
 <td>P2</td>
 </tr>
-<tr class="even">
+<tr className="even">
 <td>UI-15</td>
 <td>The DP UI shall provide the ability to define a CBSD record as active or inactive allowing the DP to activate/deactivate CBSDs based on configuration.</td>
 <td>P2</td>
@@ -372,22 +372,22 @@ scope of work.
 
 <table>
 <tbody>
-<tr class="odd">
+<tr className="odd">
 <td><strong>Requirement ID</strong></td>
 <td><strong>Description</strong></td>
 <td><strong>Priority</strong></td>
 </tr>
-<tr class="even">
+<tr className="even">
 <td>DA-01</td>
 <td>The DP shall be deployable as a kubernetes managed container system.</td>
 <td>P1</td>
 </tr>
-<tr class="odd">
+<tr className="odd">
 <td>DA-02</td>
 <td>The DP shall be horizontally scalable based on number of connections/CBSDs.</td>
 <td>P1</td>
 </tr>
-<tr class="even">
+<tr className="even">
 <td>DA-03</td>
 <td><p>The DP shall be self contained such that it is deployable in any standard kubernetes environment including:</p>
 <ul>
@@ -399,12 +399,12 @@ scope of work.
 </ul></td>
 <td>P1</td>
 </tr>
-<tr class="odd">
+<tr className="odd">
 <td>DA-04</td>
 <td>The DP delivery shall include all helm charts and any necessary installation scripts and procedures</td>
 <td>P1</td>
 </tr>
-<tr class="even">
+<tr className="even">
 <td>DA-05</td>
 <td><p>The DP shall support networking requirements on both SAS Client Interface and CBSD Proxy Interface including:</p>
 <ul>
