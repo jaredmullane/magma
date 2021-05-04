@@ -56,17 +56,6 @@
         {
           type: 'docsVersionDropdown',
           position: "left",
-          dropdownActiveClassDisabled: true,
-          dropdownItemsAfter: [
-            {
-              to: 'https://v1.docusaurus.io',
-              label: '1.x.x',
-            },
-            {
-              to: '/versions',
-              label: 'All versions',
-            },
-          ],
         },
         {
           "href": "https://github.com/magma",
