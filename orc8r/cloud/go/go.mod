@@ -29,14 +29,14 @@ require (
 	github.com/facebookincubator/ent v0.0.0-20191128071424-29c7b0a0d805
 	github.com/facebookincubator/prometheus-configmanager v0.0.0-20200717220759-a8282767b087
 	github.com/facebookincubator/prometheus-edge-hub v1.1.0
-	github.com/go-openapi/errors v0.19.2
-	github.com/go-openapi/strfmt v0.19.4
-	github.com/go-openapi/swag v0.19.5
-	github.com/go-openapi/validate v0.19.3
+	github.com/go-openapi/errors v0.19.4
+	github.com/go-openapi/strfmt v0.19.5
+	github.com/go-openapi/swag v0.19.9
+	github.com/go-openapi/validate v0.19.8
 	github.com/go-sql-driver/mysql v1.4.1
 	github.com/go-swagger/go-swagger v0.21.0
 	github.com/golang/glog v0.0.0-20160126235308-23def4e6c14b
-	github.com/golang/protobuf v1.3.3
+	github.com/golang/protobuf v1.4.0
 	github.com/google/go-cmp v0.5.5
 	github.com/google/uuid v1.1.1
 	github.com/hashicorp/go-multierror v1.0.0
@@ -50,11 +50,11 @@ require (
 	github.com/opencontainers/go-digest v1.0.0 // indirect
 	github.com/ory/go-acc v0.2.6
 	github.com/pkg/errors v0.9.1
-	github.com/prometheus/alertmanager v0.17.0
-	github.com/prometheus/client_golang v1.5.1
+	github.com/prometheus/alertmanager v0.21.0
+	github.com/prometheus/client_golang v1.6.0
 	github.com/prometheus/client_model v0.2.0
-	github.com/prometheus/common v0.9.1
-	github.com/prometheus/procfs v0.0.8
+	github.com/prometheus/common v0.10.0
+	github.com/prometheus/procfs v0.0.11
 	github.com/prometheus/prometheus v0.0.0-20190607092147-e23fa22233cf
 	github.com/robfig/cron/v3 v3.0.1
 	github.com/spf13/cobra v1.0.0
